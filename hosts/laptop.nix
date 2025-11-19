@@ -6,6 +6,7 @@
     ./modules/users.nix                 # модуль пользователя
     ./modules/systemd-boot.nix          # модуль загрузчика systemd-boot
     ./modules/tty.nix                   # настройки tty шрифта, приветствия
+    ./modules/network-iwd.nix           # только wi-fi
   ];
 
   networking.hostName = "nixos-laptop";
