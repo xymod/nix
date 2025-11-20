@@ -5,7 +5,12 @@
     enable = true;              # Включено
     defaultKeymap = "viins";    # insert mode по умолчанию, Esc → normal mode
     enableCompletion = true;    # Автодополнение
-    
+
+    # Алиасы в начале строки
+    shellAliases = {
+      ls = "ls --group-directories-first --classify --almost-all --color=auto";
+    };
+
     # История
     history = {
       append = true;            # Дописывать историю, а не перезаписывать
