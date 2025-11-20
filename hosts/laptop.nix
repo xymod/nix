@@ -9,6 +9,8 @@
     ./modules/network-iwd.nix           # только wi-fi
   ];
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   programs.niri.enable = true;
   programs.nano.enable = false;
   networking.hostName = "nixos-laptop";
