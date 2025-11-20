@@ -12,4 +12,6 @@
     ./modules/git.nix
     ./modules/zsh.nix
   ];
+
+  home.file.".config/niri/config.kdl".source = ./config.kdl;
 }
