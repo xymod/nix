@@ -11,6 +11,7 @@
     ./modules/foot.nix
     ./modules/git.nix
     ./modules/zsh.nix
+    ./modules/waybar.nix
     ./modules/fonts.nix
   ];
 
