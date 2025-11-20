@@ -9,6 +9,7 @@
     ./modules/network-iwd.nix           # только wi-fi
   ];
 
+  programs.nano.enable = false;
   networking.hostName = "nixos-laptop";
   system.stateVersion = "25.05";
   time.timeZone = "UTC";
