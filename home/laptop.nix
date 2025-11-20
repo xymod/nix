@@ -5,14 +5,9 @@
   home.homeDirectory = "/home/mod";
   home.stateVersion = "25.05";
 
-  programs.git.enable = true;
+  imports = [
+    ./modules/neovim.nix
+  ];
 
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-    extraConfig = ''
-      set number
-      set relativenumber
-    '';
-  };
+  programs.git.enable = true;
 }
