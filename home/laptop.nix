@@ -13,5 +13,5 @@
     ./modules/zsh.nix
   ];
 
-  home.file.".config/niri/config.kdl".source = ./config.kdl;
+  home.file.".config/niri/config.kdl".source = ./modules/niri/config.kdl;
 }
