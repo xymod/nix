@@ -2,19 +2,20 @@
 
 {
   networking = {
-    dhcpcd.enable = false;
+    dhcpcd.enable = false;                        # Отключаем чтобы не было конфликта, так как iwd выполнит роль dhcp-клиента
     wireless.iwd = {
-      enable = true;
+      enable = true;                              # Включаем iwd
       settings = {
         General = {
-          AddressRandomization = "network";    # Рандомизация MAC для каждой сети
+          EnableNetworkConfiguration = true;      # Настройка сети переходит к iwd (dhcp, routes)
+          AddressRandomization = "network";       # Рандомизация MAC для каждой сети
         };
         Network = {
-          EnableIPv6 = false;                  # Отключение IPv6
-          NameResolvingService = "resolvconf";
+          EnableIPv6 = false;                     # Отключение IPv6
+          NameResolvingService = "resolvconf";    # Что используем в качестве DNS-сервиса
         };
         Rank = {
-          BandModifier6GHz = 3.0;              # Чем выше значение, там больше приоритет для подключения
+          BandModifier6GHz = 3.0;                 # Чем выше значение, там больше приоритет для подключения
           BandModifier5GHz = 2.0;
           BandModifier2_4GHz = 1.0;
         };
