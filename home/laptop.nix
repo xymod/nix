@@ -7,7 +7,8 @@
 
   imports = [
     ./modules/neovim.nix
+    ./modules/firefox.nix
+    ./modules/foot.nix
+    ./modules/git.nix
   ];
-
-  programs.git.enable = true;
 }
