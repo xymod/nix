@@ -1,9 +1,9 @@
-{ config, pkgs, ... }:
+{ config, lib, ... }:
 
 {
   services.getty = {
-    greetingLine = "Welcome to NixOS";
-    helpLine = "";
+    greetingLine = lib.mkForce "NixOS ${config.system.nixos.release} — \\l";
+    helpLine = lib.mkForce "";
   };
   console = {
     enable = true;         # Включен по умолчанию, но пусть будет
