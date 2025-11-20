@@ -4,7 +4,7 @@
   users = {
     allowNoPasswordLogin = false;             # Оставляем проверку, что есть возможность войти по паролю или SSH-ключу админу
     defaultUserHome = "/home";                # Директория для обычного пользователя по умолчанию
-    defaultUserShell = pkgs.bash;             # Оболочка по умолчанию
+    defaultUserShell = pkgs.zsh;              # Оболочка по умолчанию
     mutableUsers = false;                     # Все пользователи и группы ТОЛЬКО через конфиг
     users = {
       mod = {                                 # Имя пользователя mod
