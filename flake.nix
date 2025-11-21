@@ -16,7 +16,7 @@
    
   {
     nixosConfigurations = {
-      laptop = nixpkgs.lib.nixosSystem {
+      nixos-laptop = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
           ./hosts/laptop.nix
