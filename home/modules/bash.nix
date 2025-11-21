@@ -24,10 +24,8 @@
       "checkjobs"        # Проверять фоновые задания перед выходом из сессии
     ];
     initExtra = ''
-    # Сохраняем текущую git‑ветку, если есть
-    export PROMPT_COMMAND='PS1_CMD1=$(git branch --show-current 2>/dev/null)'
-    # Устанавливаем PS1
-    export PS1='\[\e[30;48;5;41m\]\u\[\e[0;48;5;39m\] \[\e[30m\]\H\[\e[39m\] \[\e[48;5;220m\] \[\e[30m\]\w\[\e[39m\] \[\e[30;48;5;200m\]${PS1_CMD1}\[\e[0m\] '
+      source ${pkgs.git}/share/git/contrib/completion/git-prompt.sh
+      export PS1='\[\e[30;48;5;41m\]\u\[\e[0;48;5;39m\] \[\e[30m\]\H\[\e[39m\] \[\e[48;5;220m\] \[\e[30m\]\w\[\e[39m\] \[\e[30;48;5;200m\]$(__git_ps1 " (%s)")\[\e[0m\] '
     '';
   };
 }
