@@ -7,7 +7,7 @@
     ./modules/systemd-boot.nix          # модуль загрузчика systemd-boot
     ./modules/tty.nix                   # настройки tty шрифта, приветствия
     ./modules/network-iwd.nix           # только wi-fi
-    ./modules/usb-automount.nix         # автомонтирование флешки
+    #./modules/usb-automount.nix         # автомонтирование флешки
   ];
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
