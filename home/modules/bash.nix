@@ -7,7 +7,7 @@
     shellAliases = {
       ls = "ls --group-directories-first --color=auto";
       lsa = "ls -A";
-      ll = "ls -lh --time-style=+%d.%m.%Y"
+      ll = "ls -lh --time-style=+%d.%m.%Y";
       lla = "ll -A";
     };
     historyControl = [ 
