@@ -9,7 +9,7 @@
     ./modules/network-iwd.nix           # только wi-fi
   ];
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
+  environment.systemPackages = with pkgs; [ brightnessctl ];
   xdg.portal.enable = false;
   programs.niri.enable = true;
   programs.nano.enable = false;
