@@ -45,6 +45,7 @@
       mainBar = {
         position = "top";
         height = 50;
+		spacing = 20;
 
         modules-left = [ "cpu" "memory" "temperature" "disk" "battery" "network" ];
         modules-center = [ "custom/active-windows" ];
@@ -102,9 +103,37 @@
 	    	medium = 50;
 	    	critical = 20;
 		  };
-		  format-icons = ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"];     # Иконки батареи для разных уровней
+		  format-icons = [ "󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];     # Иконки батареи для разных уровней
 		  tooltip-format-charging = "До полной зарядки: {time}\nЗдоровье: {health}%\nЦиклов: {cycles}";
 		  tooltip-format-discharging = "Потребляет: {power}W\nОсталось работы: {time}\nЗдоровье: {health}%\nЦиклов: {cycles}";
+    	};
+    	# Интернет
+    	"network" = {
+		  format = "{icon}";
+		  format-alt = "{icon}  {bandwidthDownBytes}  {bandwidthUpBytes}";
+		  format-wifi = "{icon} {signalStrength}%";
+		  format-ethernet = "󰈀";
+		  format-linked = "󰤬";                # Когда нет ip
+		  format-disconnected = "󰤮";
+		  format-disabled = "󰤫";          # Интерфейс выключен
+		  format-icons = [
+	        "󰤮"        # отключено
+	    	"󰤟"        # 0-25%    (слабый)
+	    	"󰤢"        # 25-50%   (средний)
+	    	"󰤥"        # 50-75%   (хороший)
+	    	"󰤨"        # 75-100%  (отличный)
+		  ];
+		  interval = 30;
+		  tooltip = true;
+		  tooltip-format = "WiFi: {essid} ({frequency} GHz)\n\nИмя интерфейса: {ifname}\n󰩟  {ipaddr}\nШлюз: {gwaddr}\nМаска IPv4: {netmask}(/{cidr})\n\n  {bandwidthDownBytes}   {bandwidthUpBytes}";
+		  tooltip-format-wifi = "WiFi: {essid} ({frequency} GHz)\n\nИмя интерфейса: {ifname}\n󰩟  {ipaddr}\nШлюз: {gwaddr}\nМаска IPv4: {netmask}(/{cidr})\n\n  {bandwidthDownBytes}   {bandwidthUpBytes}";
+		  tooltip-format-disconnected = "WiFi disconnected";
+		  tooltip-format-disabled = "WiFi disabled";
+    	};
+    	# Раскладка клавиатуры
+    	"niri/language" = {
+		  format-en = "en";
+		  format-ru = "ру";
     	};
       };
     };
