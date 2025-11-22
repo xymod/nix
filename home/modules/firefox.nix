@@ -161,16 +161,41 @@
         ##################
         ###     AI     ###
         ##################
-        "browser.ml.enable" = lock-false;                        # Глобально отключаем ИИ
-        "browser.ml.chat.menu" = lock-false;                     # Отключаем ИИ в меню ПКМ
-        "browser.tabs.groups.smart.enabled" = lock-false;        # Отключаем ИИ‑подсказки для групп вкладок
-        "browser.ml.linkPreview.enabled" = lock-false;           # Отключаем ИИ-превью ссылок
-        ##################
-        ### Переводчик ###
-        ##################
-        "browser.translations.enable" = lock-true;               # Включаем встроенный переводчик
-        "browser.translations.automaticallyPopup" = lock-false;  # Отключаем всплывающее окно о переводе
-
+        "browser.ml.enable" = lock-false;                            # Глобально отключаем ИИ
+        "browser.ml.chat.menu" = lock-false;                         # Отключаем ИИ в меню ПКМ
+        "browser.tabs.groups.smart.enabled" = lock-false;            # Отключаем ИИ‑подсказки для групп вкладок
+        "browser.ml.linkPreview.enabled" = lock-false;               # Отключаем ИИ-превью ссылок
+        ####################################
+        ###          Переводчик          ###
+        ####################################
+        "browser.translations.enable" = lock-true;                   # Включаем встроенный переводчик
+        "browser.translations.automaticallyPopup" = lock-false;      # Отключаем всплывающее окно о переводе
+        ####################################
+        ### Подсказки в поисковой строке ###
+        ####################################
+        "browser.urlbar.suggest.history" = lock-false;               # Отключает предложения из истории
+        "browser.urlbar.suggest.bookmark" = lock-false;              # Отключаем показ закладок
+        "browser.urlbar.suggest.clipboard" = lock-false;             # Отключаем предложения из буфера обмена
+        "browser.urlbar.suggest.openpage" = lock-false;              # Отключаем подсказки из открытых вкладок
+        "browser.urlbar.suggest.engines" = lock-false;               # Отключаем “Search with <движок>”
+        "browser.urlbar.suggest.weather" = lock-false;               # Отключаем прогноз погоды
+        "browser.urlbar.suggest.calculator" = lock-false;            # Отключаем калькулятор 
+        "browser.urlbar.unitConversion.enabled" = lock-false;        # Отключаем конвертацию единиц
+        "browser.urlbar.suggest.topsites" = lock-false;              # Отключаем предложения самых посещаемых сайтов
+        "browser.urlbar.trending.featureGate" = lock-false;          # Отключаем трендовые поисковые подсказки
+        "browser.urlbar.suggest.trending" = lock-false;              # Отключаем сам механизм подсказок трендовых запросов
+        "browser.urlbar.recentsearches.featureGate" = lock-false;    # Отключаем отображение недавних запросов
+        "browser.urlbar.autoFill" = lock-false;                      # Отключаем автоматическое дописывание URL
+        "browser.urlbar.autoFill.adaptiveHistory.enabled" = lock-false;    # Отключаем интеллектуальное автозаполнение на основе адаптивной истории
+        ####################################
+        ###        Быстродействие        ###
+        ####################################
+        "gfx.content.skia-font-cache-size" = { Value = 32; Status = "locked"; };        # Размер кеша шрифтов
+        "gfx.canvas.accelerated.cache-items" = { Value = 32768; Status = "locked"; };   # Сколько объектов canvas хранить в кэше GPU
+        "gfx.canvas.accelerated.cache-size" = { Value = 4096; Status = "locked"; };     # Объём памяти для кэша ускорённого canvas
+        "browser.cache.disk.enable" = lock-false;                                       # Отключаем дисковый кэш браузера
+        "browser.cache.memory.capacity" = { Value = 4096; Status = "locked"; };         # Максимальный объём оперативной памяти для кэширования данных
+        "browser.cache.memory.max_entry_size" = { Value = 4096; Status = "locked"; };   # Максимальный размер одной записи в кэше
       };
 
     };
@@ -191,6 +216,10 @@
         "sidebar.verticalTabs.dragToPinPromo.dismissed" = true;      # Отключаем подсказку при первом открытии
         "sidebar.animation.expand-on-hover.delay-duration-ms" = 0;   # Задержка для раскрытия при наведении
         "sidebar.animation.expand-on-hover.duration-ms" = 180;       # Скорость раскрытия/скрытия
+        ##############################
+        ###       Скроллинг        ###
+        ##############################
+        "apz.overscroll.enabled" = false;                            # Отключаем эффект "overscroll"
       };
     };
   };
