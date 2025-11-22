@@ -7,7 +7,7 @@
 	  * { all: unset; }
       /* Общее для всех */
       window#waybar {
-        font-family: "Iosevka NF Light";
+        font-family: "IosevkaTerm NF Light";
         font-size: 30px;
         color: #E9E9E9;
       }
@@ -65,13 +65,46 @@
 		  format = "  {percentage}%";
 		  format-alt = "  {used}GiB";
 		  states = {
-	    	medium": 50;
-	        high": 70;
-	    	critical": 90;
+	    	medium = 50;
+	        high = 70;
+	    	critical = 90;
 		  };
 		  on-click = "";
 		  tooltip = true;
     	  tooltip-format = "Total RAM: {total} GiB\nUsed: {used} GiB\n\nTotal SWAP: {swapTotal} GiB\nUsed SWAP: {swapUsed} GiB";
+        };
+		# Температура
+        "temperature" = {
+		  interval = 10;
+		  thermal-zone = 22;
+		  critical-threshold = 70;
+		  format-critical = " {temperatureC}°";
+		  format = " {temperatureC}°";
+		  tooltip = false;
+    	};
+		# Диск
+    	"disk" = {
+		  interval = 60;
+		  format = "<span font='26'>󰋊</span> {specific_used:.0f}GB";
+		  format-alt = "󰋊 {percentage_used}%";
+		  unit = "GB";
+		  tooltip = true;
+		  tooltip-format = "Размер диска:        {specific_total:.1f}GB\nСвободно:       {specific_free:.1f}GB({percentage_free}%)\nИспользовано:      {specific_used:.1f}GB({percentage_used}%)";
+    	};
+    	# Батарея
+    	"battery" = {
+		  interval = 60;
+		  design-capacity = false;                      # Использовать текущую ёмкость, не проектную
+		  format = "<span font='26'>{icon}</span> {capacity}%";		   # Отображение: заряд в % и иконка
+		  format-alt = "<span font='26'>{icon}</span> {power}W";
+		  format-charging = "<span font='26'>󰂄</span> {capacity}%";
+		  states = {
+	    	medium = 50;
+	    	critical = 20;
+		  };
+		  format-icons = ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"];     # Иконки батареи для разных уровней
+		  tooltip-format-charging = "До полной зарядки: {time}\nЗдоровье: {health}%\nЦиклов: {cycles}";
+		  tooltip-format-discharging = "Потребляет: {power}W\nОсталось работы: {time}\nЗдоровье: {health}%\nЦиклов: {cycles}";
     	};
       };
     };
