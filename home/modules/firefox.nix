@@ -144,7 +144,20 @@
       ####################################################
       ### Настройки pref через политики (с блокировкой)###
       ####################################################
-      Preferences = {                        
+      Preferences =
+      let                                                       # Объявляем переменные
+        lock-false = { Value = false; Status = "locked"; };
+        lock-true  = { Value = true;  Status = "locked"; };
+      in {    
+        ##################
+        ### MOZILLA UI ###
+        ##################
+        "browser.discovery.enabled" = lock-false;                                               # Отключаем персональные рекомендации расширений
+        "browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons" = lock-false;        # Не предлагать расширения, основываясь на действиях
+        "browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features" = lock-false;      # Не советовать функции браузера
+        "browser.aboutConfig.showWarning" = lock-false;                                         # Не показывать предупреждение в about:config
+        "toolkit.legacyUserProfileCustomizations.stylesheets" = lock-true;                      # Для применения кастомного CSS
+        "layout.css.prefers-color-scheme.content-override" = { Value = 0; Status = "locked"; }; # Применяем темную тему
       };
 
     };
