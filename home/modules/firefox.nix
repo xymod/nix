@@ -155,10 +155,10 @@
     profiles.xymod = {
       isDefault = true;
       settings = {
-        "sidebar.verticalTabs" = true;            # Включаем вертикальные вкладки
-        "sidebar.position_start" = true;          # Расположение панели вертикальных вкладок слева
-        "sidebar.visibility" = expand-on-hover;   # Панель вертикальных вкладок скрыта, разворачивается при наведении
-        "sidebar.main.tools" = "";                # Отключаем все значки с панели вертикальных вкладок
+        "sidebar.verticalTabs" = true;              # Включаем вертикальные вкладки
+        "sidebar.position_start" = true;            # Расположение панели вертикальных вкладок слева
+        "sidebar.visibility" = "expand-on-hover";   # Панель вертикальных вкладок скрыта, разворачивается при наведении
+        "sidebar.main.tools" = " ";                 # Отключаем все значки с панели вертикальных вкладок
         "sidebar.verticalTabs.dragToPinPromo.dismissed" = true;    # Отключаем подсказку при первом открытии
       };
     };
