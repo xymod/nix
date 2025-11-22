@@ -190,12 +190,26 @@
         ####################################
         ###        Быстродействие        ###
         ####################################
+        "layout.frame_rate" = { Value = 120; Status = "locked"; };                      # Частота обновления
         "gfx.content.skia-font-cache-size" = { Value = 32; Status = "locked"; };        # Размер кеша шрифтов
         "gfx.canvas.accelerated.cache-items" = { Value = 32768; Status = "locked"; };   # Сколько объектов canvas хранить в кэше GPU
         "gfx.canvas.accelerated.cache-size" = { Value = 4096; Status = "locked"; };     # Объём памяти для кэша ускорённого canvas
         "browser.cache.disk.enable" = lock-false;                                       # Отключаем дисковый кэш браузера
         "browser.cache.memory.capacity" = { Value = 4096; Status = "locked"; };         # Максимальный объём оперативной памяти для кэширования данных
         "browser.cache.memory.max_entry_size" = { Value = 4096; Status = "locked"; };   # Максимальный размер одной записи в кэше
+        ####################################
+        ###           Скроллинг          ###
+        ####################################
+        "general.smoothScroll" = lock-true;                                                                  # Включаем плавную прокрутку
+        "general.smoothScroll.msdPhysics.enabled" = lock-true;                                               # Включаем физическую модель прокрутки
+        "general.smoothScroll.msdPhysics.continuousMotionMaxDeltaMS" = { Value = 12; Status = "locked"; };   # Частота обновления, меньше = более гладкие расчёты
+        "general.smoothScroll.msdPhysics.motionBeginSpringConstant" = { Value = 600; Status = "locked"; };   # Влияет на быстроту старта прокрутки
+        "general.smoothScroll.msdPhysics.regularSpringConstant" = { Value = 650; Status = "locked"; };       # Жёсткость пружины 
+        "general.smoothScroll.msdPhysics.slowdownMinDeltaMS" = { Value = 25; Status = "locked"; };           # Минимальный дельта-время при замедлении
+        "general.smoothScroll.msdPhysics.slowdownMinDeltaRatio" = { Value = 2; Status = "locked"; };         # Когда прокрутка начнёт замедление, больше = мягче тормоз
+        "general.smoothScroll.msdPhysics.slowdownSpringConstant" = { Value = 250; Status = "locked"; };      # Как быстро прокрутка замедляется
+        "general.smoothScroll.currentVelocityWeighting" = { Value = 1; Status = "locked"; };                 # Влияние инерции
+        "general.smoothScroll.stopDecelerationWeighting" = { Value = 1; Status = "locked"; };                # Больше = медленнее и плавнее останавливается
       };
 
     };
@@ -220,6 +234,7 @@
         ###       Скроллинг        ###
         ##############################
         "apz.overscroll.enabled" = false;                            # Отключаем эффект "overscroll"
+        "mousewheel.default.delta_multiplier_y" = "300";             # Yасколько “большие шаги” прокрутки скролла
       };
     };
   };
