@@ -10,6 +10,7 @@
   ];
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  xdg.portal.enable = false;
   programs.niri.enable = true;
   programs.nano.enable = false;
   networking.hostName = "nixos-laptop";
