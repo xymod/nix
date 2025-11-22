@@ -59,6 +59,20 @@
 	        critical = 90;
 	      };
 		};
+        # Оперативная память
+    	"memory" = {
+		  interval = 10;
+		  format = "  {percentage}%";
+		  format-alt = "  {used}GiB";
+		  states = {
+	    	medium": 50;
+	        high": 70;
+	    	critical": 90;
+		  };
+		  on-click = "";
+		  tooltip = true;
+    	  tooltip-format = "Total RAM: {total} GiB\nUsed: {used} GiB\n\nTotal SWAP: {swapTotal} GiB\nUsed SWAP: {swapUsed} GiB";
+    	};
       };
     };
   };
