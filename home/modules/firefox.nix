@@ -54,6 +54,30 @@
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
         };
       };
+      FirefoxHome = {                        # Настройки стартовой страницы
+        Locked = true;
+        Search = false;                      # Отключаем поисковую панель
+        TopSites = false;                    # Отключаем часто посещаемые сайты
+        SponsoredTopSites = false;           # Отключаем рекламные сайты
+        Highlights = false;                  # Отключаем недавно посещённые страницы
+        Pocket = false;                      # Отключаем рекомендованные статьи Pocket
+        Stories = false;                     # Отключаем рекомендованные статьи
+        SponsoredPocket = false;             # Отключаем спонсируемые статьи от Pocket
+        SponsoredStories = false;            # Отключаем спонсируемые истории
+        Snippets = false;                    # Отключаем короткие сообщения от Mozilla
+      };
+      GenerativeAI = {
+        Locked = true;
+        Enabled = false;                     # Отключаем ИИ
+        Chatbot = false;                     # Отключаем ИИ‑чат‑бот в боковой панели
+        LinkPreviews = false;                # Отключаем ИИ‑превью ссылок
+        TabGroups = false;                   # Отключаем ИИ‑подсказки для групп вкладок
+      };
+      HardwareAcceleration = true;           # Включаем аппаратное ускорение
+      Homepage = {                           # Настройки домашней страницы (TODO: можно установить свой url тут)
+        Locked = true;
+        StartPage = "previous-session";      # При открытии Firefox восстановить вкладки
+      };
 
     };
 
