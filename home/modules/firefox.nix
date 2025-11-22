@@ -78,6 +78,74 @@
         Locked = true;
         StartPage = "previous-session";      # При открытии Firefox восстановить вкладки
       };
+      HttpsOnlyMode = "force_enabled";       # Включаем только HTTPS, и блокируем отключение
+      NetworkPrediction = false;             # Отключаем DNS запросы по неоткрытым ссылкам
+      NewTabPage = false;                    # Отключаем стандартную страницу “Новая вкладка”, будет пустая страница
+      NoDefaultBookmarks = true;             # Отключаем автоматическое создание стандартных закладок
+      OfferToSaveLogins = false;             # Отключаем предложения сохранить пароли
+      OverrideFirstRunPage = "";             # Страница, которая будет показана при первом открытии Firefox (пусто = пропустить welcome page)
+      PasswordManagerEnabled = false;        # Отключаем менеджер паролей
+      Permissions = {                        # Устанавливаем разрешения
+        Camera = {
+          Locked = true;
+          BlockNewRequests = true;           # Блокируем запросы камеры 
+        };
+        Microphone = {
+          Locked = true;
+          BlockNewRequests = true;           # Блокируем запросы микрофона
+        };
+        Location = {
+          Locked = true;
+          BlockNewRequests = true;           # Блокируем запросы местоположения
+        };
+        Notifications = {
+          Locked = true;
+          BlockNewRequests = true;           # Блокируем запросы уведомлений
+        };
+        Autoplay = {
+          Locked = true;
+          Default = "block-audio-video";     # Блокируем автовоспроизведение аудио и видео
+        };
+        VirtualReality = {
+          Locked = true;
+          BlockNewRequests = true;           # Блокируем запросы VR
+        };
+        ScreenShare = {
+          Locked = true;
+          BlockNewRequests = true;           # Блокируем запросы поделиться экраном
+        };
+      };
+      PictureInPicture = true;               # Включаем функцию картинка в картинке
+      PopupBlocking = {
+        Locked = true;
+        Default = true;                      # Блокируем всплывающие окна
+      };
+      PrintingEnabled = true;                # Включаем печать
+      PromptForDownloadLocation = false;     # Отключаем вопросы куда скачать файл
+      SearchBar = "unified";                 # Едины URL бар
+      SearchEngines = {
+        Default = "ddg";                     # Поисковик по умолчанию Duck Duck GO
+        PreventInstalls = true;              # Запрещаем установку поисковика с веб-страниц
+        Remove = [ "Google" ];               # Удаляем встроенные поисковики
+      };
+      SearchSuggestEnabled = false;          # Отключаем подсказки поиска
+      SkipTermsOfUse = true;                 # Отключаем отображение Условий использования и Уведомлений о конфиденциальности при запуске
+      UserMessaging = {                      # Какие сообщения отправлять
+        Locked = true;
+        ExtensionRecommendations = false;    # Не показывать рекомендации расширений
+        FeatureRecommendations = false;      # Не рекомендовать функции браузера
+        UrlbarInterventions = false;         # Не показывать советы в адресной строке
+        SkipOnboarding = true;               # Пропустить приветственные подсказки при первом запуске
+        MoreFromMozilla = false;             # Не показывать раздел “Больше от Mozilla” в настройках
+        FirefoxLabs = false;                 # Отключить раздел Firefox Labs (эксперименты) в настройках
+      };
+      VisualSearchEnabled = false;           # Отключаем поиск через изображения
+      
+      ####################################################
+      ### Настройки pref через политики (с блокировкой)###
+      ####################################################
+      Preferences = {                        
+      };
 
     };
 
@@ -86,6 +154,9 @@
     #########################
     profiles.xymod = {
       isDefault = true;
+      settings = {
+        "sidebar.verticalTabs" = true;
+      };
     };
   };
 }
