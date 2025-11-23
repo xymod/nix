@@ -8,7 +8,7 @@
       /* Общее для всех */
       window#waybar {
         font-family: "IosevkaTerm NF Light";
-        font-size: 30px;
+        font-size: 14px;
         color: #E9E9E9;
       }
 	  /* Верхний бар */
@@ -16,14 +16,13 @@
     	background: rgba(32, 32, 32, 0.99);
     	border: 2px solid #575757;
     	border-top: none;
-    	border-radius: 0 0 35px 35px;  /* верх-лево | верх-право | низ-право | низ-лево */
 	  }
 	  /* Модули верхнего бара */
 	  window#waybar.top .modules-left {
-        padding-left: 20px;
+        padding-left: 5px;
 	  }
 	  window#waybar.top .modules-right {
-        padding-right: 20px;
+        padding-right: 5px;
 	  }
 	  /* Цвета состояний */
 	  #cpu.medium,
@@ -44,8 +43,8 @@
     settings = {
       mainBar = {
         position = "top";
-        height = 50;
-		spacing = 20;
+        height = 20;
+		spacing = 10;
 
         modules-left = [ "cpu" "memory" "temperature" "disk" "battery" "network" ];
         modules-center = [ "custom/active-windows" ];
