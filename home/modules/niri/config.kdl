@@ -163,9 +163,11 @@ binds {
   //------------ Niri ------------//
   Mod+Shift+Slash { show-hotkey-overlay; }                              // Показать бинды
   Mod+Shift+E { quit; }                                                 // Закрыть niri
+  Mod+Shift+P { power-off-monitors; }                                   // Выключить экран
   //------ Работа с окнами -------//
   Mod+Q repeat=false { close-window; }                                  // Закрыть окно
   Mod+F { fullscreen-window; }                                          // Окно на весь экран
+  Mod+C { center-column; }                                              // Центрировать окно
   Mod+Minus { set-column-width "-10%"; }                                // Уменьшить ширину на 10%
   Mod+Equal { set-column-width "+10%"; }                                // Увеличить ширину на 10%
   Mod+R { switch-preset-column-width; }                                 // Сменить пресет ширины окна
@@ -177,11 +179,15 @@ binds {
   Mod+J     { focus-window-down; }                                      // Перейти на окно вниз
   Mod+K     { focus-window-up; }                                        // Перейти на окно вверх
   Mod+L     { focus-column-right; }                                     // Перейти на окно вправо
+  Mod+Alt+H  { focus-column-first; }                                    // Перейти на первое окно
+  Mod+Alt+L  { focus-column-last; }                                     // Перейти на последнее окно 
   //------ Переместить окно ------//
   Mod+Ctrl+H     { move-column-left; }                                  // Переместить окно влево
   Mod+Ctrl+J     { move-window-down; }                                  // Переместить окно вниз
   Mod+Ctrl+K     { move-window-up; }                                    // Переместить окно вверх
   Mod+Ctrl+L     { move-column-right; }                                 // Переместить окно вправо
+  Mod+Alt+Ctrl+H  { move-column-to-first; }                             // Переместить окно в начало
+  Mod+Alt+Ctrl+L  { move-column-to-last; }                              // Переместить окно в конец
   //------ Работа с рабочими пространствами -------//
   Mod+O repeat=false { toggle-overview; }                               // Открыть просмотр рабочих пространств
   Mod+Ctrl+Down    { move-workspace-down; }                             // Переместить рабочее пространство вниз
@@ -229,13 +235,6 @@ binds {
     XF86AudioPrev        allow-when-locked=true { spawn-sh "playerctl previous"; }
     XF86AudioNext        allow-when-locked=true { spawn-sh "playerctl next"; }
 
-
-    Mod+Home { focus-column-first; }
-    Mod+End  { focus-column-last; }
-    Mod+Ctrl+Home { move-column-to-first; }
-    Mod+Ctrl+End  { move-column-to-last; }
-
-
     // Switches focus between the current and the previous workspace.
     // Mod+Tab { focus-workspace-previous; }
 
@@ -247,19 +246,11 @@ binds {
     // Mod+R { switch-preset-column-width-back; }
     Mod+Ctrl+R { reset-window-height; }
 
-    Mod+C { center-column; }
-
-
     // Move the focused window between the floating and the tiling layout.
     Mod+V       { toggle-window-floating; }
     Mod+Shift+V { switch-focus-between-floating-and-tiling; }
 
-
     Print { screenshot; }
     Ctrl+Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
-
-    // Powers off the monitors. To turn them back on, do any input like
-    // moving the mouse or pressing any other key.
-    Mod+Shift+P { power-off-monitors; }
 }
