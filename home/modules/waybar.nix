@@ -14,8 +14,6 @@
 	  /* Верхний бар */
 	  window#waybar.top {
     	background: rgba(32, 32, 32, 0.99);
-    	border: 2px solid #575757;
-    	border-top: none;
 	  }
 	  /* Модули верхнего бара */
 	  window#waybar.top .modules-left {
