@@ -8,14 +8,13 @@ input {
   keyboard {
     xkb {
       layout "us,ru"                               // Список используемых раскладок клавиатуры
-      options "grp:win_space_toggle,ctrl:nocaps"   // Смена языка Mod + пробел, отключение CapsLock
+      options "grp:win_space_toggle,ctrl:nocaps"   // Смена языка Mod + пробел, CapsLock = Ctrl
     }
   }
   //------------ Тачпад -----------//
   touchpad {
     tap                                       // Одно касание считаеть кликом
     dwt                                       // Отключение тачпада, когда печатаешь
-    //drag false                                // Перенос окна через нажатие а не тап
     drag-lock                                 // При отрывании пальца не сразу отменяется перенос окна
     tap-button-map "left-right-middle"        // 2 пальца = правая кнопка, 3 пальца = средняя
     click-method "clickfinger"                // Какая кнопка мыши определяется количеством пальцев, не местом на тачпаде
@@ -77,10 +76,10 @@ layout {
 
 //---- Вид обзора рабочих столов ----//
 overview {
-  zoom 0.5
-  backdrop-color "#262626"
+  zoom 0.5                                     // Отдаление окон в просмотре
+  backdrop-color "#262626"                     // Цвет фона за рабочими пространствами
   workspace-shadow { 
-    off 
+    off                                        // Выключаем тени
   }
 }
 
@@ -152,13 +151,13 @@ animations {
 //----------------------------------------//
 // Секция: Правила для определенных окон  //
 //----------------------------------------//
-window-rule {
+window-rule {                                                  // Правила для всех окон
   geometry-corner-radius 10                                    // Радиус скругления углов
   clip-to-geometry true                                        // Включить или отключить для самого окна (не рамки)
 }
 window-rule {
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"    // Применить к Firefox с заголовком Picture-in-Picture
-    open-floating true                                         // Открыть его в плавающем режиме
+    open-floating true                                         // Открыть в плавающем режиме
 }
 
 //---------------------------------//
@@ -253,7 +252,7 @@ binds {
     Mod+Period { expel-window-from-column; }
     // Cycling through the presets in reverse order is also possible.
     // Mod+R { switch-preset-column-width-back; }
-    Mod+Ctrl+R { reset-window-height; }
+    Mod+Ctrl+N { reset-window-height; }
 
     // Move the focused window between the floating and the tiling layout.
     Mod+V       { toggle-window-floating; }
