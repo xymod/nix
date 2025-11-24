@@ -50,7 +50,6 @@ layout {
   center-focused-column "never"                // Никогда не центрировать окна при переключении
   always-center-single-column                  // Центрировать окно по горизонтали если оно одно на столе
   default-column-width { proportion 0.5; }     // Стандартная ширину новых окон, когда они открываются
-  shadow { off }                               // Выключаем тени окон
   //---- Внешние отступы окон ----//
   struts {
     left -14                                    // Отступы слева
@@ -80,14 +79,18 @@ layout {
 overview {
   zoom 0.5
   backdrop-color "#262626"
-  workspace-shadow { off }
+  workspace-shadow { 
+    off 
+  }
 }
 
 //---------------------------------//
 //     Секция: Общие настройки     //
 //---------------------------------//
 prefer-no-csd                                                     // Не использовать CSD приложениями, если возможно
-hotkey-overlay { skip-at-startup }                                // Отключить всплывающее окно с биндами при старте
+hotkey-overlay { 
+  skip-at-startup                                                 // Отключить всплывающее окно с биндами при старте
+}         
 screenshot-path "~/Pictures/Screenshots/Screenshot %d.%m.%Y.png"  // Директория для скриншотов и формат записи
 
 //---------------------------------//
