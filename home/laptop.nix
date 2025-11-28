@@ -14,6 +14,7 @@
     ./modules/waybar.nix
     ./modules/fonts.nix
     ./modules/dircolors.nix
+    ./modules/swaylock.nix
  #   ./modules/pointerCursor.nix
   ];
 
