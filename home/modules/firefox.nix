@@ -162,7 +162,10 @@
         "browser.tabs.closeWindowWithLastTab" = lock-false;                                     # Не закрывать окно при закрытии последней вкладки
         "browser.tabs.insertAfterCurrent" = lock-true;                                          # Открывать новую вкладку сразу после текущей
         "extensions.unifiedExtensions.button.always_visible" = lock-false;                      # Отключаем иконку расширения в панели инструментов
-
+        "browser.tabs.allowTabDetach" = lock-false;                                             # Отключаем отсоединение вкладок в новые окна
+        "browser.urlbar.scotchBonnet.enableOverride" = lock-false;                              # Отключаем выпадающий список поисковых систем в адресной строке
+        "browser.uitour.enabled" = lock-false;                                                  # Отключаем тур по новинкам Firefox
+        "extensions.abuseReport.enabled" = lock-false;                                          # Отключаем возможность пожаловаться на расширение при его удалении
 
         ##################
         ###     AI     ###
@@ -180,20 +183,21 @@
         ####################################
         ### Подсказки в поисковой строке ###
         ####################################
-        "browser.urlbar.suggest.history" = lock-false;               # Отключает предложения из истории
-        "browser.urlbar.suggest.bookmark" = lock-false;              # Отключаем показ закладок
-        "browser.urlbar.suggest.clipboard" = lock-false;             # Отключаем предложения из буфера обмена
-        "browser.urlbar.suggest.openpage" = lock-false;              # Отключаем подсказки из открытых вкладок
-        "browser.urlbar.suggest.engines" = lock-false;               # Отключаем “Search with <движок>”
-        "browser.urlbar.suggest.weather" = lock-false;               # Отключаем прогноз погоды
-        "browser.urlbar.suggest.calculator" = lock-false;            # Отключаем калькулятор 
-        "browser.urlbar.unitConversion.enabled" = lock-false;        # Отключаем конвертацию единиц
-        "browser.urlbar.suggest.topsites" = lock-false;              # Отключаем предложения самых посещаемых сайтов
-        "browser.urlbar.trending.featureGate" = lock-false;          # Отключаем трендовые поисковые подсказки
-        "browser.urlbar.suggest.trending" = lock-false;              # Отключаем сам механизм подсказок трендовых запросов
-        "browser.urlbar.recentsearches.featureGate" = lock-false;    # Отключаем отображение недавних запросов
-        "browser.urlbar.autoFill" = lock-false;                      # Отключаем автоматическое дописывание URL
+        "browser.urlbar.suggest.history" = lock-false;                     # Отключает предложения из истории
+        "browser.urlbar.suggest.bookmark" = lock-false;                    # Отключаем показ закладок
+        "browser.urlbar.suggest.clipboard" = lock-false;                   # Отключаем предложения из буфера обмена
+        "browser.urlbar.suggest.openpage" = lock-false;                    # Отключаем подсказки из открытых вкладок
+        "browser.urlbar.suggest.engines" = lock-false;                     # Отключаем “Search with <движок>”
+        "browser.urlbar.suggest.weather" = lock-false;                     # Отключаем прогноз погоды
+        "browser.urlbar.suggest.calculator" = lock-false;                  # Отключаем калькулятор 
+        "browser.urlbar.unitConversion.enabled" = lock-false;              # Отключаем конвертацию единиц
+        "browser.urlbar.suggest.topsites" = lock-false;                    # Отключаем предложения самых посещаемых сайтов
+        "browser.urlbar.trending.featureGate" = lock-false;                # Отключаем трендовые поисковые подсказки
+        "browser.urlbar.suggest.trending" = lock-false;                    # Отключаем сам механизм подсказок трендовых запросов
+        "browser.urlbar.recentsearches.featureGate" = lock-false;          # Отключаем отображение недавних запросов
+        "browser.urlbar.autoFill" = lock-false;                            # Отключаем автоматическое дописывание URL
         "browser.urlbar.autoFill.adaptiveHistory.enabled" = lock-false;    # Отключаем интеллектуальное автозаполнение на основе адаптивной истории
+        "browser.urlbar.richSuggestions.tail" = lock-false;                # Отключаем предугадывание не полностью введённых поисковых запросов
         ####################################
         ###        Быстродействие        ###
         ####################################
@@ -218,11 +222,41 @@
         "general.smoothScroll.currentVelocityWeighting" = { Value = 1; Status = "locked"; };                 # Влияние инерции
         "general.smoothScroll.stopDecelerationWeighting" = { Value = 1; Status = "locked"; };                # Больше = медленнее и плавнее останавливается
         ####################################
+        ###         Телеметрия           ###
+        ####################################
+        "dom.private-attribution.submission.enabled" = lock-false;                                           # Отключаем телеметрию по просмотренной на сайтах рекламе
+        "dom.security.unexpected_system_load_telemetry_enabled" = lock-false;                                # Отключаем телеметрию
+        "media.webvtt.testing.events" = lock-false;                                                          # Отключаем телеметрию
+        "network.traffic_analyzer.enabled" = lock-false;                                                     # Отключаем телеметрию
+        "network.trr.confirmation_telemetry_enabled" = lock-false;                                           # Отключаем телеметрию
+        "" = lock-false;                                                          # Отключаем телеметрию
+        "" = lock-false;                                                          # Отключаем телеметрию
+        "" = lock-false;                                                          # Отключаем телеметрию
+        "" = lock-false;                                                          # Отключаем телеметрию
+        "" = lock-false;                                                          # Отключаем телеметрию
+
+        ####################################
         ###           Прочее             ###
         ####################################
         "accessibility.force_disabled" = { Value = 1; Status = "locked"; };                                  # Запрещаем службы поддержки доступности
         "app.update.checkInstallTime" = lock-false;                                                          # Отключаем подсчет дней после обновления
         "browser.backup.enabled" = lock-false;                                                               # Отключаем создание резервной копии профиля
+        "browser.crashReporter.memtest" = lock-false;                                                        # Отключаем отправку отчёта о падении вкладки
+        "browser.tabs.crashReporting.sendReport" = lock-false;                                               # Отключаем отправку отчёта о падении вкладки
+        "browser.tabs.hoverPreview.enabled" = lock-false;                                                    # Отключаем превью вкладок
+        "browser.tabs.hoverPreview.showThumbnails" = lock-false;                                             # Отключаем превью вкладок
+        "dom.forms.autocomplete.formautofill" = lock-false;                                                  # Отключаем дополнительные автозаполнения форм
+        "extensions.formautofill.addresses.capture.enabled" = lock-false;                                    # Отключаем дополнительные автозаполнения форм
+        "extensions.formautofill.available" = { Value = " "; Status = "locked"; };                           # Отключаем дополнительные автозаполнения форм
+        "browser.migrate.chrome.payment_methods.enabled" = lock-false;                                       # Отключаем дополнительные автозаполнения форм
+        "dom.gamepad.enabled" = lock-false;                                                                  # Отключаем геймпад
+        "dom.gamepad.extensions.enabled" = lock-false;                                                       # Отключаем геймпад
+        "extensions.getAddons.cache.enabled" = lock-false;                                                   # Отключаем дополнительно рекомендации расширений
+        "geo.enabled" = lock-false;                                                                          # Отключаем информацию о местоположении
+        "network.notify.changed" = lock-false;                                                               # Отключаем проверку каждые 5 сек об изменении сетевого подключения компьютера
+        "network.prefetch-next" = lock-false;                                                                # Отключаем предварительную загрузку ссылок на сайте
+        "network.wifi.scanning_period" = { Value = 0; Status = "locked"; };                                  # Отключаем сканирование wi-fi
+
         
 
 
@@ -254,11 +288,14 @@
         ##############################
         ###        Прочее          ###
         ##############################
-        "devtools.accessibility.enabled" = false;                    # Запрещаем службы поддержки доступности
-        "app.normandy.enabled" = false;                              # Отключаем опросы и сбор данных
-        "services.sync.prefs.sync.browser.discovery.enabled" = false;                                                                   # Отключаем сервис 
-        "services.sync.prefs.sync.browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons" = false;                            # Отключаем сервис
-        "services.sync.prefs.sync.browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features" = false;                          # Отключаем сервис
+        "devtools.accessibility.enabled" = false;                                                                     # Запрещаем службы поддержки доступности
+        "app.normandy.enabled" = false;                                                                               # Отключаем опросы и сбор данных
+        "services.sync.prefs.sync.browser.discovery.enabled" = false;                                                 # Отключаем сервис 
+        "services.sync.prefs.sync.browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons" = false;          # Отключаем сервис
+        "services.sync.prefs.sync.browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features" = false;        # Отключаем сервис
+        "memory.phc.enabled" = false;                                                                                 # Отключаем телеметрию об ошибках в работе памяти
+        "narrate.enabled" = false;                                                                                    # Отключаем зачитывание текста синтезированной речью в режиме чтения
+
     };
   };
 }
