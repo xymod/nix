@@ -14,8 +14,8 @@
     ./modules/waybar.nix
     ./modules/fonts.nix
     ./modules/dircolors.nix
-    ./modules/swaylock.nix
- #   ./modules/pointerCursor.nix
+    #./modules/swaylock.nix
+    #./modules/pointerCursor.nix
   ];
 
   home.file.".config/niri/config.kdl".source = ./modules/niri/config.kdl;
