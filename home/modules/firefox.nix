@@ -152,21 +152,21 @@
         ##################
         ### MOZILLA UI ###
         ##################
-        "browser.discovery.enabled" = lock-false;                                               # Отключаем персональные рекомендации расширений
-        "browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons" = lock-false;        # Не предлагать расширения, основываясь на действиях
-        "browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features" = lock-false;      # Не советовать функции браузера
-        "browser.aboutConfig.showWarning" = lock-false;                                         # Не показывать предупреждение в about:config
-        "toolkit.legacyUserProfileCustomizations.stylesheets" = lock-true;                      # Для применения кастомного CSS
-        "layout.css.prefers-color-scheme.content-override" = { Value = 0; Status = "locked"; }; # Применяем темную тему
-        "extensions.activeThemeID" = { Value = "firefox-compact-dark@mozilla.org"; Status = "locked"; };
-        "browser.uidensity" = { Value = 1; Status = "locked"; };                                # Плотность содержимого верхней панели
-        "browser.tabs.closeWindowWithLastTab" = lock-false;                                     # Не закрывать окно при закрытии последней вкладки
-        "browser.tabs.insertAfterCurrent" = lock-true;                                          # Открывать новую вкладку сразу после текущей
-        "extensions.unifiedExtensions.button.always_visible" = lock-false;                      # Отключаем иконку расширения в панели инструментов
-        "browser.tabs.allowTabDetach" = lock-false;                                             # Отключаем отсоединение вкладок в новые окна
-        "browser.urlbar.scotchBonnet.enableOverride" = lock-false;                              # Отключаем выпадающий список поисковых систем в адресной строке
-        "browser.uitour.enabled" = lock-false;                                                  # Отключаем тур по новинкам Firefox
-        "extensions.abuseReport.enabled" = lock-false;                                          # Отключаем возможность пожаловаться на расширение при его удалении
+        "browser.discovery.enabled" = lock-false;                                                         # Отключаем персональные рекомендации расширений
+        "browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons" = lock-false;                  # Не предлагать расширения, основываясь на действиях
+        "browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features" = lock-false;                # Не советовать функции браузера
+        "browser.aboutConfig.showWarning" = lock-false;                                                   # Не показывать предупреждение в about:config
+        "toolkit.legacyUserProfileCustomizations.stylesheets" = lock-true;                                # Для применения кастомного CSS
+        "layout.css.prefers-color-scheme.content-override" = { Value = 0; Status = "locked"; };           # Применяем темную тему
+        "extensions.activeThemeID" = { Value = "firefox-compact-dark@mozilla.org"; Status = "locked"; };  # Устанавливаем темную тему
+        "browser.uidensity" = { Value = 1; Status = "locked"; };                                          # Плотность содержимого верхней панели
+        "browser.tabs.closeWindowWithLastTab" = lock-false;                                               # Не закрывать окно при закрытии последней вкладки
+        "browser.tabs.insertAfterCurrent" = lock-true;                                                    # Открывать новую вкладку сразу после текущей
+        "extensions.unifiedExtensions.button.always_visible" = lock-false;                                # Отключаем иконку расширения в панели инструментов
+        "browser.tabs.allowTabDetach" = lock-false;                                                       # Отключаем отсоединение вкладок в новые окна
+        "browser.urlbar.scotchBonnet.enableOverride" = lock-false;                                        # Отключаем выпадающий список поисковых систем в адресной строке
+        "browser.uitour.enabled" = lock-false;                                                            # Отключаем тур по новинкам Firefox
+        "extensions.abuseReport.enabled" = lock-false;                                                    # Отключаем возможность пожаловаться на расширение при его удалении
 
         ##################
         ###     AI     ###
