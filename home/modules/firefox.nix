@@ -158,6 +158,7 @@
         "browser.aboutConfig.showWarning" = lock-false;                                         # Не показывать предупреждение в about:config
         "toolkit.legacyUserProfileCustomizations.stylesheets" = lock-true;                      # Для применения кастомного CSS
         "layout.css.prefers-color-scheme.content-override" = { Value = 0; Status = "locked"; }; # Применяем темную тему
+        "extensions.activeThemeID" = { Value = "firefox-compact-dark@mozilla.org"; Status = "locked"; };
         "browser.uidensity" = { Value = 1; Status = "locked"; };                                # Плотность содержимого верхней панели
         "browser.tabs.closeWindowWithLastTab" = lock-false;                                     # Не закрывать окно при закрытии последней вкладки
         "browser.tabs.insertAfterCurrent" = lock-true;                                          # Открывать новую вкладку сразу после текущей
