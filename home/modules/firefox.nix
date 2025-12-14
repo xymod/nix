@@ -296,9 +296,9 @@
       ##############################
       userChrome = ''
         .titlebar-close,                    /* Крестик закрытия окна                       */
-	      #sidebar-button,                    /* Кнопка раскрытия боковой панели с вкладками */
-	      #alltabs-button,                    /* Кнопка показа всех вкладок                  */
-	      #firefox-view-button,               /* Кнопка firefox-view                         */
+	    #sidebar-button,                    /* Кнопка раскрытия боковой панели с вкладками */
+	    #alltabs-button,                    /* Кнопка показа всех вкладок                  */
+	    #firefox-view-button,               /* Кнопка firefox-view                         */
         #back-button,                       /* Кнопка назад                                */
         #forward-button {                   /* Кнопка вперед                               */
           display: none !important;
