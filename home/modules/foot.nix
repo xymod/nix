@@ -22,6 +22,11 @@
         multiplier = 8.0;
         "indicator-position" = "relative";
       };
+
+      colors = {
+        background = "1a1b26";   # Фон как Tokyonight в nvim
+        foreground = "c0caf5";   # Основной текст как Tokyonight в nvim
+      };
     };
   };
 }
