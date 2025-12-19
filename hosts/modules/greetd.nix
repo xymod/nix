@@ -8,7 +8,6 @@
     enable = true;
     settings = {
       default_session = {
-        user = "mod";
         command = ''
           ${pkgs.greetd.tuigreet}/bin/tuigreet \
           --time \                                         # Показывать время
