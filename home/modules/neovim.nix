@@ -1,7 +1,11 @@
 { config, pkgs, lib, ... }:
 
 {
-  programs.neovim = {
+    home.packages = with pkgs; [
+      wl-clipboard
+    ];  
+
+    programs.neovim = {
     #######################
     ### Общие настройки ###
     #######################
@@ -60,6 +64,14 @@
           { desc = "Go to buffer " .. i }
         )
       end
+      vim.opt.clipboard = "unnamedplus"
+      -- Вставка из системного буфера
+      vim.keymap.set('n', '<C-v>', '"+p', { silent = true, desc = "Paste from system clipboard" })
+      vim.keymap.set('i', '<C-v>', '<C-r>+', { silent = true, desc = "Paste from system clipboard" })
+
+      -- Копирование в системный буфер
+      vim.keymap.set('v', '<C-c>', '"+y', { silent = true, desc = "Copy selection to system clipboard" })
+      vim.keymap.set('n', '<C-c>', '"+yy', { silent = true, desc = "Copy current line to system clipboard" })
 
       -----------------------------
       --        THEME            --
