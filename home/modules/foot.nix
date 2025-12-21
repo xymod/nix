@@ -29,8 +29,8 @@
       };
 
       key-bindings = {
-        clipboard-copy = "Alt+c";
-        clipboard-paste = "Alt+v";
+        clipboard-copy = "Control+c";
+        clipboard-paste = "Control+v";
       };
     };
   };
