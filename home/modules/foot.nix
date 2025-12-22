@@ -28,8 +28,8 @@
         foreground = "c0caf5";                       # Основной текст как Tokyonight в nvim
       };
       key-bindings = {
-        clipboard-copy = "Control+c XF86Copy";       # Копировать текст
-        clipboard-paste = "Control+v XF86Paste";     # Вставить текст
+       clipboard-copy = "Control+Shift+c XF86Copy";       # Копировать текст
+        clipboard-paste = "Control+Shift+v XF86Paste";     # Вставить текст
       };
     };
   };
