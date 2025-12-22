@@ -15,6 +15,11 @@
       lsa = "ls -A";                                        # Показывает скрытые файлы + настройки ls
       ll = "ls -lh --time-style=+%d.%m.%Y";                 # Показывает подробную информацию + настройки ls
       lla = "ll -A";                                        # Показывает скрытые файлы + настройки ll
+      rebuild = "sudo nixos-rebuild switch --flake $HOME/nix#nixos-laptop";         # Применяет конфигурацию сразу и сохраняет её как текущее поколение 
+      rebuild-test = "sudo nixos-rebuild test --flake $HOME/nix#nixos-laptop";      # Временно применяет конфигурацию (откатится после перезагрузки)
+      rollback = "sudo nixos-rebuild switch --rollback";                            # Откатывает систему на предыдущее сохранённое поколение 
+      gc = "sudo nix-collect-garbage -d";                                           # Удаляет все поколения, оставляя только текущее 
+      gpush = "git add . && git commit -m 'Update' && git push";                    # Пуш в git 
     };
     ###########################
     ###    История команд   ###
