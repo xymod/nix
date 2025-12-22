@@ -156,10 +156,12 @@ window-rule {                                                  // Правила
   geometry-corner-radius 10                                    // Радиус скругления углов
   clip-to-geometry true                                        // Включить или отключить для самого окна (не рамки)
 }
+
 window-rule {
-    match app-id=r#"firefox$"# title="^Picture-in-Picture$"    // Применить к Firefox с заголовком Picture-in-Picture
-    open-floating true                                         // Открыть в плавающем режиме
+    match app-id=r#"firefox$"# title=r#"^(Picture-in-Picture|Library)$"#
+    open-floating true
 }
+
 
 //---------------------------------//
 //           Секция: Бинды         //
