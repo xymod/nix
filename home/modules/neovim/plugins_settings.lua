@@ -35,19 +35,21 @@ require("lualine").setup {
 -----------------------------------------------------------
 --        bufferline       --    Вкладки буферов сверху  --
 -----------------------------------------------------------
-require("bufferline").setup {
+local bufferline = require('bufferline')                 --
+bufferline.setup {
   options = {
-    mode = "buffers",                                    -- Показывать буферы как вкладки
-    separator_style = "slope",
-    color_icons = true,                                  -- Показывать цветные иконки
-    show_buffer_icons = true,                            -- Показывать иконки файлов в вкладке
+    mode                    = "buffers",                 -- Показывать буферы как вкладки
+    separator_style         = "slant",                   -- Внешний вид формы вкладок
+    color_icons             = true,                      -- Показывать цветные иконки
+    show_buffer_icons       = true,                      -- Показывать иконки файлов в вкладке
     show_buffer_close_icons = false,                     -- Не показывать иконку закрытия (крестик)
-    move_wraps_at_ends = true,                           -- Зацикленный переход между вкладками
-    always_show_bufferline = true,                       -- Если буфер один, строка вкладок не показывается
-    numbers = "ordinal",                                 -- Показывать порядковые номера вкладок
+    move_wraps_at_ends      = true,                      -- Зацикленный переход между вкладками
+    always_show_bufferline  = true,                      -- Показывать bufferline всегда
+    numbers                 = "ordinal",                 -- Показывать порядковые номера вкладок
     indicator = {
-      style = 'underline',                               -- Подсветка активного буфера снизу
+      style                 = 'none',                    -- Убираем индикатор активного буффера (подчеркивание)
     },
+    style_preset            = bufferline.style_preset.no_italic,  -- Убирает весь курсивный текст
   },
 }
 
@@ -55,15 +57,15 @@ require("bufferline").setup {
 --      toggleterm         --         Терминал          --
 ----------------------------------------------------------
 require("toggleterm").setup({
-  size = 15,                                          -- Высота терминала
-  open_mapping = [[<leader>t]],                       -- Сочетание клавиш для открытия/закрытия терминала
-  hide_numbers = true,                                -- Скрывать номера строк
-  start_in_insert = true,                             -- Сразу входить в режим ввода
-  insert_mappings = true,                             -- Разрешить хоткеи 
-  persist_size = true,                                -- 
-  direction = "float",                                -- Терминал как всплывающее окно
-  close_on_exit = true,                               -- Выход при вводе 'exit'
-  shell = vim.o.shell,                                -- Использовать системный shell
+  size            = 15,                                 -- Высота терминала
+  open_mapping    = [[<leader>t]],                      -- Сочетание клавиш для открытия/закрытия терминала
+  hide_numbers    = true,                               -- Скрывать номера строк
+  start_in_insert = true,                               -- Сразу входить в режим ввода
+  insert_mappings = true,                               -- Разрешить хоткеи 
+  persist_size    = true,                               -- 
+  direction       = "float",                            -- Терминал как всплывающее окно
+  close_on_exit   = true,                               -- Выход при вводе 'exit'
+  shell           = vim.o.shell,                        -- Использовать системный shell
 })
 
 vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]])          -- Выход из terminal mode в normal mode по Esc
@@ -99,7 +101,7 @@ require("gitsigns").setup({
 })
 
 vim.cmd([[
-  highlight GitSignsAdd           guifg=#9ece6a guibg=NONE  " Для новых строк
+  highlight GitSignsAdd           guifg=#7fff5f guibg=NONE  " Для новых строк
   highlight GitSignsChange        guifg=#e0af68 guibg=NONE  " Для измененных строк 
   highlight GitSignsDelete        guifg=#f7768e guibg=NONE  " Для удаленных строк
   highlight GitSignsChangeDelete  guifg=#bb9af7 guibg=NONE  " 
