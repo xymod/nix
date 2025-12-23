@@ -34,6 +34,7 @@
     extraLuaConfig = ''
       ${builtins.readFile ./settings.lua}
       ${builtins.readFile ./plugins_settings.lua}
+      ${builtins.readFile ./bindings.lua}
     '';
   };
 }
