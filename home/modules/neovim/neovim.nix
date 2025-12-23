@@ -25,6 +25,7 @@
       nvim-scrollbar
       gitsigns-nvim
       toggleterm-nvim
+      nvim-colorizer-lua
     ];
 
     #######################
