@@ -26,15 +26,16 @@
       gitsigns-nvim
       toggleterm-nvim
       nvim-colorizer-lua
+      nvim-hlslens
     ];
 
     #######################
     ###   LUA конфиги   ###
     #######################
     extraLuaConfig = ''
+      ${builtins.readFile ./bindings.lua}
       ${builtins.readFile ./settings.lua}
       ${builtins.readFile ./plugins_settings.lua}
-      ${builtins.readFile ./bindings.lua}
     '';
   };
 }
