@@ -6,8 +6,6 @@
     ### Общие настройки ###
     #######################
     enable = true;                                      # Включаем git
-    userName = "mod";                                   # Имя пользователя
-    userEmail = "mod@example.com";                      # Почта пользователя
     #######################
     ###     Подпись     ###
     #######################
@@ -19,11 +17,19 @@
     #######################
     ###  Доп настройки  ###
     #######################
-    extraConfig = ''
-      [core]
-      sshCommand = "ssh -i /run/media/mod/SecureVault/.ssh/github -F /dev/null";
-      [url "git@github.com:xymod/"]
-      insteadOf = "https://github.com/xymod/"
-    '';
+    settings = {
+      user = {
+        name  = "mod";
+        email = "mod@example.com";
+      };
+      core = {
+        sshCommand = "ssh -i /run/media/mod/SecureVault/.ssh/github -F /dev/null";
+      };
+      url = {
+        "git@github.com:xymod/" = {
+          insteadOf = "https://github.com/xymod/";
+        };
+      };
+    };
   };
 }

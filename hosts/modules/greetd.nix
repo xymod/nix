@@ -11,7 +11,7 @@
     ### Настройки tuigreet и сессии ###
     ###################################
     settings.default_session.command = ''
-      ${pkgs.greetd.tuigreet}/bin/tuigreet \
+      ${pkgs.tuigreet}/bin/tuigreet \
       --time \
       --time-format "%d.%m.%Y %H:%M" \
       --asterisks \

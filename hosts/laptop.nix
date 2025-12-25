@@ -17,7 +17,7 @@
   ### Общие настройки ###
   #######################
   networking.hostName = "nixos-laptop";                              # Имя хоста системы
-  system.stateVersion = "25.05";                                     # Версия NixOS (НЕ обновлять без причины)
+  system.stateVersion = "25.11";                                     # Версия NixOS (НЕ обновлять без причины)
   time.timeZone = "UTC";                                             # Часовой пояс
   nix.settings.experimental-features = [ "nix-command" "flakes" ];   # Включаем flakes и nix-command
   #xdg.portal.enable = false;                                         #
