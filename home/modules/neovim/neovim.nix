@@ -48,6 +48,8 @@
       ${builtins.readFile ./settings.lua}
       ${builtins.readFile ./terminal.lua}
       ${builtins.readFile ./plugins_settings.lua}
+      --     Плагины       --
+      ${builtins.readFile ./plugins/oil.lua}          -- Файловый менеджер буфферный
     '';
   };
 }
