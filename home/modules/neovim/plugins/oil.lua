@@ -16,34 +16,42 @@ require("oil").setup({
       return name == ".."                         -- Список "что не показывать"
     end,
   },
-  -- 2.2 Внешний вид окна 
+  -- 2.2 Внешний вид окна --
   float = {
-    padding = 1,                                  -- Отступ
-    border = "single",                            -- Вид рамки
+    preview_split = "right",                      -- Где показывать окно предпросмотра в сплите
+    border        = "rounded",                    -- Стиль рамки
+    max_width     = 0.8,                          -- Размер максимум 80% от ширины экрана
+    max_height    = 0.8,                          -- Размер максимум 80% от высоты экрана
   },
+  -- 3. Автоматическое обновление git-индекса при изменении файлов в Oil --
   git = {
-    add = function(path)
-      return true  -- git add file
-    end,
-    mv = function(src, dest)
-          return true  -- git mv src dest
-    end,
-    rm = function(path)
-          return true  -- git rm file
-    end,
+    add = function() return true end,             -- включить автоматический `git add` при создании/добавлении файлов
+    mv  = function() return true end,             -- включить автоматический `git mv` при перемещении/переименовании файлов
+    rm  = function() return true end,             -- включить автоматический `git rm` при удалении файлов
   },
-  -- 3. Биндинги в буфере oil --
+  -- 4. Биндинги в буфере oil --
   keymaps = {
     ["<Esc>"] = "actions.close",                  -- (ESC) Закрыть буфер Oil
     ["<CR>"]  = "actions.select",                 -- (Enter) Открыть файл/зайти в директорию
     ["gx"]    = "actions.open_external",          -- Открывать файлы в ассоциирующихся программах 
+    ["."]     = "actions.toggle_hidden",          -- (.) Показать/скрыть скрытые файлы
   },
 })
--- 4. Биндинги глобальные
--- 4.1 Открытие oil в текущей директории на "-" 
+-- 5. Биндинги глобальные --
+-- 5.1 Открытие oil в текущей директории на "-" --
 vim.keymap.set("n", "-", function()                             -- Нормальный режим, клавиша "-"
-    return vim.bo.filetype == "oil"                             -- Если текущий буфер oil
-        and vim.cmd("Oil")                                      -- Выполнить команду :Oil (подняться на уровень выше) 
-        or require("oil").open_float(vim.fn.expand("%:p:h"))    -- Иначе открыть oil в текущей директории в флоат окне 
+  return vim.bo.filetype == "oil"                               -- Если текущий буфер oil
+    and vim.cmd("Oil")                                          -- Выполнить команду :Oil (подняться на уровень выше) 
+    or require("oil").open_float(vim.fn.expand("%:p:h"))        -- Иначе открыть oil в текущей директории в флоат окне 
 end)
-
+-- 6. Настройка хайлайтсов --
+local hl = vim.api.nvim_set_hl                                      -- Переменная
+hl(0, "OilHidden",           { fg = "#3F4257", italic = false })    -- Общее для скрытых
+hl(0, "OilFile",             { fg = "#C0CAF5" })                    -- Обычные файлы
+hl(0, "OilDir",              { fg = "#F5D76E" })                    -- Имена директорий
+hl(0, "OilDirIcon",          { fg = "#F5D76E" })                    -- Иконки директорий
+hl(0, "OilDirHidden",        { fg = "#8F8552" })                    -- Имена скрытых директорий
+hl(0, "OilLink",             { fg = "#7EC699" })                    -- Имена обычных символических ссылок
+hl(0, "OilLinkHidden",       { fg = "#4B7355" })                    -- Имена скрытых символических ссылок
+hl(0, "OilOrphanLink",       { fg = "#FF6C6B" })                    -- Имена обычных сиротских ссылок
+hl(0, "OilOrphanLinkHidden", { fg = "#8B2F2F" })                    -- Имена скрытых сиротских ссылок
