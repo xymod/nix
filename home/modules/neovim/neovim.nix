@@ -30,15 +30,15 @@ in
     ### Установка плагинов ###
     ##########################
     plugins = with pkgs.vimPlugins; [
+      catppuccin-nvim
       lualine-nvim                        ## Строка статуса внизу
+      nvim-web-devicons
       indent-blankline-nvim               ## Вертикальные линии отступов (структура кода)
       oil-nvim                            ## Файловый менеджер (буфферный)
       oil-git-nvim                        ## Ототбражение git статуса в oil 
       oilLspDiagnostics                   ## Ототбражение lsp инфо в oil (справа от файла)
       noice-nvim                          ## Командная строка + уведомления
       nvim-notify
-      bufferline-nvim                     ## Вкладки буферов сверху
-      tokyonight-nvim                     ## Цветовая тема (UI + синтаксис)
       langmapper-nvim
       nvim-scrollbar
       gitsigns-nvim
@@ -68,7 +68,11 @@ in
       ${builtins.readFile ./plugins_settings.lua}
       --     Плагины       --
       ${builtins.readFile ./plugins/oil.lua}          -- Файловый менеджер буфферный
-      ${builtins.readFile ./plugins/noice-nvim.lua}   -- Командная строка + уведомления
+      ${builtins.readFile ./plugins/noice.lua}   -- Командная строка + уведомления
+      ${builtins.readFile ./plugins/lualine.lua}   -- Командная строка + уведомления
+      ${builtins.readFile ./plugins/catppuccin.lua}          -- Файловый менеджер буфферный
+
+
     '';
   };
 }

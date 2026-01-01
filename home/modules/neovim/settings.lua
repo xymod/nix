@@ -6,7 +6,6 @@
 vim.opt.number         = true          -- Показывать абсолютный номер текущей строки
 vim.opt.relativenumber = true          -- Нумерация остальных строк - относительно текущей строки 
 vim.opt.mouse          = "a"           -- Включаем поддержку мыши во всех режимах
-vim.opt.clipboard      = "unnamedplus" -- Включаем системный буфер (для копирования глобального)
 vim.opt.whichwrap      = "<,>,h,l"     -- Для перемещения между строк при нажатии вправо/влево 
 vim.opt.langmap        = "йцукенгшщзфывапролдячсмитьЖ;qwertyuiopasdfghjklzxcvbnm:"  -- Использование команд vim независимо от раскладки 
 -----------------------------
@@ -28,8 +27,8 @@ vim.opt.incsearch      = true          -- Neovim показывает совпа
 vim.opt.hlsearch       = true          -- Включаем подсветку совпадений
 -----------------------------
 --           UI            --
+vim.opt.termguicolors  = true
 vim.opt.cursorline     = true          -- Выделять текущую строку на которой курсор
-vim.opt.termguicolors  = true          -- Включаем поддержку 24-битных цветов
 vim.opt.wrap           = false         -- Отключаем перенос строки на новую строку
 vim.opt.showmode       = false         -- Скрыть мод -- INSERT -- (делает lualine)
 vim.opt.showcmd        = false         -- Скрыть вводимые команды
@@ -56,5 +55,11 @@ vim.api.nvim_create_autocmd("CmdlineEnter", {
     vim.fn.system("niri msg action switch-layout 0")   -- Переключение на английскую расскладку через niri msg
   end,
 })
-
+-- Отключение автокоментирования новых строк на "Enter" и "o" --
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "*",
+  callback = function()
+    vim.opt_local.formatoptions:remove({ "r", "o" })
+  end,
+})
 

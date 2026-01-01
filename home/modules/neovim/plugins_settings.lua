@@ -4,23 +4,10 @@
 local map  = vim.keymap.set
 local opts = { silent = true, noremap = true }
 
---###############################-------------------------
---     Плагин tokyonight      ###     Цветовая тема     --
---###############################-------------------------
-require("tokyonight").setup({
-  -- Основные настройки --
-  style           = "night",    -- Самый контрастный и темный стиль
-  transparent     = false,      -- Прозрачность фона
-  terminal_colors = true,       -- Использовать стиль для терминала Neovim 
-})
--- Применение темы к Neovim --
-vim.cmd.colorscheme("tokyonight")
-
 --##########################------------------------------
 --    Плагин autopairs    ##    Автозакрытие кавычек    --
 --##########################------------------------------
 require("nvim-autopairs").setup({
-  ---------------------
   -- Общие настройки --
   enable_check_bracket_line = true,   -- Не вставляет пару, если в строке уже есть закрытие 
   enable_bracket_in_quote   = true,   -- Вставлять пару внутри строк (кавычек) 
@@ -34,7 +21,6 @@ require("nvim-autopairs").setup({
 --##########################------------------------------
 require('nvim-treesitter.configs').setup {
   indent = { enable = true },                         -- Включаем умные отступы
-  --------------------
   -- Подсветка кода --
   highlight = {
     enable         = true,                            -- Включаем подсветку через treesitter
@@ -42,95 +28,19 @@ require('nvim-treesitter.configs').setup {
   },
 }
 
---##########################------------------------------
---      Плагин lualine      --    Строка статуса снизу  --
---##########################------------------------------
-require("lualine").setup {
-  ---------------------
-  -- Общие настройки --
-  options = {
-    globalstatus = false,            -- У каждого буфера свой lualine
-    theme        = "auto",           -- Тема
-  },
-  ---------------------------
-  -- Секции в активном окне--
-  sections = {
-    lualine_a = { "mode" },          -- Режим NORMAL/INSERT/…
-    lualine_b = { "filename" },      -- Имя файла
-    lualine_c = { 
-      "branch",                      -- Ветка git
-      "diagnostics",                 -- Ошибки 
-    },                            
-    lualine_x = { "searchcount" },   -- Индикатор свопадений поиска 
-    lualine_y = {},
-    lualine_z = { "lsp_status" },    -- Информация о LSP 
-  },
-  -----------------------------
-  -- Секции в НЕактивном окне--
-  inactive_sections = {
-    lualine_a = { 'hostname' },      -- Имя хоста
-    lualine_b = { 'filename' },      -- Имя файла
-    lualine_c = { "lsp_status" },    -- Информация о LSP
-    lualine_x = {},
-    lualine_y = {},
-    lualine_z = {}
-  },
-  ----------------
-  -- Расширения -- Специальное отображение lualine в соответствующих буфферах 
-  extensions = {
-    "oil",                                               -- Файловый менеджер (буфферный) oil
-    "toggleterm",                                        -- Терминал 
-  },
-}
-
------------------------------------------------------------
---        bufferline       --    Вкладки буферов сверху  --
------------------------------------------------------------
-local bufferline = require('bufferline')                 --
-bufferline.setup {
-  options = {
-    mode                    = "buffers",                 -- Показывать буферы как вкладки
-    separator_style         = "slant",                   -- Внешний вид формы вкладок
-    color_icons             = true,                      -- Показывать цветные иконки
-    show_buffer_icons       = true,                      -- Показывать иконки файлов в вкладке
-    show_buffer_close_icons = false,                     -- Не показывать иконку закрытия (крестик)
-    move_wraps_at_ends      = true,                      -- Зацикленный переход между вкладками
-    always_show_bufferline  = true,                      -- Показывать bufferline всегда
-    numbers                 = "ordinal",                 -- Показывать порядковые номера вкладок
-    indicator = {
-      style                 = 'none',                    -- Убираем индикатор активного буффера (подчеркивание)
-    },
-    style_preset            = bufferline.style_preset.no_italic,  -- Убирает весь курсивный текст
-  },
-}
-
--- Буферы по номеру --
-for i = 1, 9 do
-  map(
-    "n",
-    "<leader>" .. i,
-    "<cmd>BufferLineGoToBuffer " .. i .. "<CR>",
-    opts
-  )
-end
-
-
 --#########################-------------------------------
 --       scrollbar         --                           --
 --#########################-------------------------------
 require("scrollbar").setup({
-  ---------------------
   -- Общие настройки --
   show                = true,     -- Показывать скроллбар
   show_in_active_only = true,     -- Показывать скроллбар только в активном буфере
   set_highlights      = true,     -- 
-  ---------------------
   --  Вид ползунка   --
   handle = {
     blend             = 30,       -- Прозрачность ползунка 0-100 (0 - непрозрачный)
     color             = "#9b59b6",-- Цвет ползунка
   },
-  ---------------------
   -- Содержимое бара --
   handlers = {
     cursor            = false,    -- Показывать текущую позицию курсора на скроллбаре
@@ -151,7 +61,6 @@ require('hlslens').setup({})
 --       modicator         -- Цвет номера строки от режима --
 --#########################----------------------------------
 require('modicator').setup({
-  ---------------------
   -- Общие настройки --
   show_warnings = false,                              -- Отключаем предупреждения, если что-то не задано
   integration   = { lualine = { enabled = true } },   -- Включаем интеграцию цветов от плагина lualine
@@ -167,7 +76,6 @@ require('modicator').setup({
 --     smear cursor        --       Анимация курсора       --
 --#########################----------------------------------
 require("smear_cursor").setup({
-  ---------------------
   -- Общие настройки --
   smear_between_buffers        = true,         -- Анимация перемещения между буферами
   smear_between_neighbor_lines = true,         -- Включать анимации даже при коротких движениях курсора 
